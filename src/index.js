@@ -215,9 +215,7 @@ function transactionSignLotus(unsignedMessage, privateKey) {
       GasPremium: signedMessage.message.gaspremium,
       Method: signedMessage.message.method,
       Nonce: signedMessage.message.nonce,
-      Params: Buffer.from(signedMessage.message.params, "hex").toString(
-        "base64"
-      ),
+      Params: unsignedMessage.params,
       To: signedMessage.message.to,
       Value: signedMessage.message.value,
     },
